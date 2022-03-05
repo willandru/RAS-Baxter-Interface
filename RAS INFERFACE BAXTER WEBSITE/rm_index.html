@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang='en'>
+    
+  <head>
+    <meta charset='UTF-8' />
+    <title>Floats</title>
+    <link rel='stylesheet' type="text/css" charset="utf-8" href='styles.css'/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+  <body> 
+      
+    <div class='page'>
+      <div class='content'>
+          <h1>Human-Robot Scaffolding
+      </div>
+        <div class='picture'><center><h5>Emotional Robot's State:<span class='display'></span></center>
+                  <a id='picture'></a>
+                   
+        </div>      
+      <div class='needs'>
+          <div class='specialcolumn-1'><center><h5>Identifier of student's needs</center>
+                    <div class='minicolumn'><center><h5>ZDR</center>
+                        <center> <button class="button button1">Question 1</button></center>
+                        <center> <button class="button button1">Question 2</button></center>
+                        <center> <button class="button button1">Question 3</button></center>
+                        <center> <button class="button button1">Question 4</button></center>
+                        <center> <button class="button button1">Question 5</button></center>
+                    </div>
+                    <div class='minicolumn'><center><h5>ZDP</center>
+                        <center> <button class="button button1">Question 1</button></center>
+                        <center> <button class="button button1">Question 2</button></center>
+                        <center> <button class="button button1">Question 3</button></center>
+                        <center> <button class="button button1">Question 4</button></center>
+                        <center> <button class="button button1">Question 5</button></center>
+                    </div>
+                    <div class='minicolumn'><center><h5>ZDPot</center>
+                        <center> <button class="button button1">Question 1</button></center>
+                        <center> <button class="button button1">Question 2</button></center>
+                        <center> <button class="button button1">Question 3</button></center>
+                        <center> <button class="button button1">Question 4</button></center>
+                        <center> <button class="button button1">Question 5</button></center>
+                    </div>
+          </div>
+      </div>
+      <div class='intervention'><center><h5>Support Actions</center>
+          <div class='column'><center><h5>Emotional Support</center>
+              <div class='minicolumn2-1'><center><h5>Keep the interest up</center>
+                        <center> <button class="buttonsmall button1">Action 1</button></center>                
+                        <center> <button class="buttonsmall button1">Action 2</button></center>                
+                        <center> <button class="buttonsmall button1">Action 3</button></center>                
+              </div>
+              <div class='minicolumn2-1'><center><h5>Control the frustration</center>
+                        <center> <button class="buttonsmall button1">Action 1</button></center>                
+                        <center> <button class="buttonsmall button1">Action 2</button></center>                
+                        <center> <button class="buttonsmall button1">Action 3</button></center>  
+              </div>
+          </div>
+	<script> //script para popUp	
+		function abrir(url) 
+		{ 
+			open(url,'','top=0,left=0,width=300,height=75') ; 
+		} 
+	</script> 
+
+	<script> //script TextToSpeech	
+		function TTS(textTTS) 
+		{ 
+			var synth = window.speechSynthesis;
+			var allVoices = synth.getVoices();
+			var sampleText = textTTS;
+			var utterance = new SpeechSynthesisUtterance(sampleText);
+
+			if (speechSynthesis.onvoiceschanged !== undefined) 
+			{
+  				speechSynthesis.onvoiceschanged = synth.getVoices;
+				utterance.voice = allVoices.filter(function(voice){return voice.name == 'Monica';})
+				[0];
+				window.speechSynthesis.speak(utterance);
+			} 
+		}
+	</script>
+	
+          <div class='column'><center><h5>Challenge</center> 
+              <div class='minicolumn2-3'><center><h5>Apilar</center> 
+                         <center> 
+				<a onclick="javascript:TTS('funcion apilar') ; javascript:abrir('rm_Pos_y_Nivel.html')"
+				   <button class="buttonsmall button1"> 
+			           <span title="Seleccionar Nivel y Posición">Acción 1</span>
+				</a>
+		         </center>
+              </div>                   
+              <div class='minicolumn2-3'><center><h5>Desapilar</center>
+                         <center> 
+				<a onclick="javascript:TTS('funcion desapilar') ; javascript:abrir('rm_Pos_y_Nivel.html')"
+				   <button class="buttonsmall button1"> 
+			           <span title="Seleccionar Nivel y Posición">Acción 1</span>
+				</a>
+		         </center>           
+              </div>
+              <div class='minicolumn2-3'><center><h5>Coger</center>
+                        <center> 
+				<a onclick="javascript:TTS('funcion Coger') ; javascript:abrir('rm_Pos.html')"
+				   <button class="buttonsmall button1"> 
+			           <span title="Seleccionar Posición">Acción 1</span>
+				</a>
+		         </center>             
+              </div>
+              <div class='minicolumn2-3'><center><h5>Bajar</center>
+                        <center> 
+				<a onclick="javascript:TTS('funcion Bajar') ; javascript:abrir('rm_Pos.html')"
+				   <button class="buttonsmall button1"> 
+			           <span title="Seleccionar Posición">Acción 1</span>
+				</a>
+		         </center>                  
+              </div>
+          </div>
+          <div class='column'><center><h5>Skills</center>
+              <div class='minicolumn2-3'><center><h6>Inferences</center>
+                        <center> <button class="buttonsmall button1">Action 1</button></center>                
+                        <center> <button class="buttonsmall button1">Action 2</button></center>                
+              </div>
+              <div class='minicolumn2-3'><center><h6>Show OS</center>
+                        <center> <button class="buttonsmall button1">Action 1</button></center>                
+              </div>
+              <div class='minicolumn2-3'><center><h6>Transform</center>
+                        <center> <button class="buttonsmall button1">Action 1</button></center>                
+                        <center> <button class="buttonsmall button1">Action 2</button></center>                
+              </div>
+              <div class='minicolumn2-3'><center><h6>Reduce</center>
+                        <center> <button class="buttonsmall button1">Action 1</button></center>                
+                        <center> <button class="buttonsmall button1">Action 2</button></center>                
+              </div>
+                        
+          </div>
+      </div>
+      <div class='evaluation'><center><h5>Scaffolding Evaluation</center>
+          <div class='specialcolumn'><center><h5>Cognitive Performance</center>
+              <div class='minicolumn3-1'><center><h5>Cognitive</center>
+                    <div id="slider">
+                    <div id="custom-handle" class="ui-slider-handle"></div>
+                    </div>
+              </div>
+              <div class='minicolumn3-1'><center><h5>Emotional</center>
+                    <div id="slider2">
+                    <div id="custom-handle2" class="ui-slider-handle"></div>
+                    </div>
+              </div>
+          </div>
+          <div class='specialcolumn'><center><h5>Scaffolding</center>
+              <div class='minicolumn3-2'><center><h5>Attention to the robot</center>
+                    <div id="slider3">
+                    <div id="custom-handle3" class="ui-slider-handle"></div>
+                    </div>
+              </div>
+
+          </div>
+      </div>
+      <div class='life'><center><h5>Life's Signals</center>
+          <div class='specialcolumn'><center><h5>Non-Verbal</center>
+              <div class='minicolumn3-1'><center><h5>Body's Movements</center>
+                        <center> <button class="buttonsmall button1">Action 1</button></center>                
+                        <center> <button class="buttonsmall button1">Action 2</button></center>                
+                        <center> <button class="buttonsmall button1">Action 3</button></center>  
+              </div>
+              <div class='minicolumn3-1'><center><h5>Iconic Movements</center>
+                        <center> <button class="buttonsmall button1">Action 1</button></center>                
+                        <center> <button class="buttonsmall button1">Action 2</button></center>                
+                        <center> <button class="buttonsmall button1">Action 3</button></center>  
+              </div>
+          </div>
+          <div class='specialcolumn'><center><h5>Verbal</center>
+              <div class='minicolumn3-2'><center><h5>Verbal Sounds</center>
+                        <center> <button class="buttonsmall button1">Action 1</button></center>                
+                        <center> <button class="buttonsmall button1">Action 2</button></center>                
+                        <center> <button class="buttonsmall button1">Action 3</button></center>
+              </div>              
+          </div>
+      </div>
+    </div>
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="script.js" language="Javascript" charset="utf-8" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </body>
+</html>
+<!--https://jqueryui.com/slider/#custom-handle-->
