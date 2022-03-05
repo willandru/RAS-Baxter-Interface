@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="jp_baxtertry1" type="leer.py"  name="baxter_mover__cubos_node"/>
+  <node pkg="jp_baxtertry1" type="leer2.py"  name="baxter_mover__cubos_node2"/>
+</launch>
+
+

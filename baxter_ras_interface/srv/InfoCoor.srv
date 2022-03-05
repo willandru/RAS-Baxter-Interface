@@ -1,0 +1,14 @@
+
+---
+float32[] matriz_1x
+float32[] matriz_2x
+float32[] matriz_3x
+float32[] matriz_4x
+float32[] matriz_1y
+float32[] matriz_2y
+float32[] matriz_3y
+float32[] matriz_4y
+int32[] matriz_5
+int32[] matriz_6
+int32[] matriz_7
+int32[] matriz_8

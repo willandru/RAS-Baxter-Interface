@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="baxter_ras_interface" type="Emociones_imagenes_baxter.py"  name="Emociones_imagenes_baxter"/>
+  <node pkg="baxter_ras_interface" type="Emociones_Ventiladores_Baxter.py"  name="Emociones_Ventiladores_Baxter"/>
+  <node pkg="baxter_ras_interface" type="Emociones_Leds_Baxter.py"  name="Emociones_Leds_Baxter"/>
+  <node pkg="baxter_ras_interface" type="Escuchar_HRS.py"  name="Escuchar_HRS"/>
+  <node pkg="baxter_ras_interface" type="Emociones_Frecuencia_Baxter.py"  name="Emociones_Frecuencia_Baxter"/>
+  <!--node pkg="baxter_ras_interface" type="Gd_kinectdepth.py" name="calcular_posicion_cubo_kinect"/-->
+  <!--node pkg="baxter_ras_interface" type="Gd_ver_cubo.py"  name="matriz_del_problema" output="screen"/-->
+  <!--node pkg="baxter_ras_interface" type="Funciones.py"  name="Ordenar_Estado_inicial" output="screen"/-->
+  <!--node pkg="baxter_ras_interface" type="Funciones2.py"  name="Ordenar_fichas_para_demostracion"/-->
+  <!--node pkg="baxter_ras_interface" type="Funciones3.py"  name="Ubicar_bloques_estado_actual_problema"/-->
+  <!--node pkg="baxter_ras_interface" type="Funciones4.py"  name="Avanzar_n_Estados_Correctos" /-->
+  <!--node pkg="baxter_ras_interface" type="Funciones5.py"  name="Devolver_n_Estados_Correctos"/-->
+  <!--node pkg="baxter_ras_interface" type="Funciones6.py"  name="Ordenar_Fichas_Estado_Final_Problema"/-->
+  <!--node pkg="baxter_ras_interface" type="Funciones_baxter_movimiento.py"  name="baxter_pick_and_place"/-->
+
+  
+</launch>
+
+
