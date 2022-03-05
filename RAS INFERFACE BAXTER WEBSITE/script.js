@@ -119,7 +119,7 @@ $(function() {
       }
     });
     var voicesMessage = new ROSLIB.Message({
-      data : "Voice1"
+      data : "Hola_BAXTER.mp3"
     }); 
       $display.text('x: ' + xcoord + ', y: ' + ycoord);
       jptopic.publish(twist);
@@ -160,7 +160,7 @@ $(function() {
         }
       });
     var voicesMessage = new ROSLIB.Message({
-        data : "Voice2"
+        data : "Estudia_Ingenieria_BAXTER.mp3"
     });  
         $display.text('x: ' + xcoord + ', y: ' + ycoord);
         jptopic.publish(twist);
