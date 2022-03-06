@@ -110,7 +110,7 @@ $(function() {
       linear : {
         x : xcoord,
         y : ycoord,
-        z : 2
+        z : 1
       },
       angular : {
         x : 0,
@@ -127,6 +127,7 @@ $(function() {
       console.log(twist);
   });
   });
+
   $(function() {
     $('.Introduction').bind('click', function (ev) {
         var $div = $(ev.target);
@@ -168,6 +169,90 @@ $(function() {
         console.log(twist);
     });
     });
+
+$(function() {
+  $('.Count').bind('click', function (ev) {
+      var $div = $(ev.target);
+      var $display = $div.find('.display');
+      
+      var offset = $div.offset();
+      var xcoord = Math.floor(ev.clientX - offset.left);
+      var ycoord = Math.floor(ev.clientY - offset.top);
+      
+  var jptopic = new ROSLIB.Topic({
+      ros : rbServer,
+      name : '/emociones_baxter',
+      messageType : 'geometry_msgs/Twist'
+  });
+  var rasVoice = new ROSLIB.Topic({
+      ros : rbServer,
+      name : '/voice_message',
+      messageType : 'std_msgs/String'
+  });   
+  
+  var twist = new ROSLIB.Message({
+      linear : {
+        x : xcoord,
+        y : ycoord,
+        z : 1
+      },
+      angular : {
+        x : 0,
+        y : 0,
+        z : 0
+      }
+    });
+    var voicesMessage = new ROSLIB.Message({
+      data : "robot_countdown.mp3"
+    }); 
+      $display.text('x: ' + xcoord + ', y: ' + ycoord);
+      jptopic.publish(twist);
+      rasVoice.publish(voicesMessage);
+      console.log(twist);
+  });
+  });
+
+$(function() {
+  $('.Count').bind('click', function (ev) {
+      var $div = $(ev.target);
+      var $display = $div.find('.display');
+      
+      var offset = $div.offset();
+      var xcoord = Math.floor(ev.clientX - offset.left);
+      var ycoord = Math.floor(ev.clientY - offset.top);
+      
+  var jptopic = new ROSLIB.Topic({
+      ros : rbServer,
+      name : '/emociones_baxter',
+      messageType : 'geometry_msgs/Twist'
+  });
+  var rasVoice = new ROSLIB.Topic({
+      ros : rbServer,
+      name : '/voice_message',
+      messageType : 'std_msgs/String'
+  });   
+  
+  var twist = new ROSLIB.Message({
+      linear : {
+        x : xcoord,
+        y : ycoord,
+        z : 1
+      },
+      angular : {
+        x : 0,
+        y : 0,
+        z : 0
+      }
+    });
+    var voicesMessage = new ROSLIB.Message({
+      data : "this_is_not_a_dream.mp3"
+    }); 
+      $display.text('x: ' + xcoord + ', y: ' + ycoord);
+      jptopic.publish(twist);
+      rasVoice.publish(voicesMessage);
+      console.log(twist);
+  });
+  });
 
 $(function() {
 $('.picture').bind('click', function (ev) {

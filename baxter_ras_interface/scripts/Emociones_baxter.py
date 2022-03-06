@@ -8,9 +8,9 @@ import sys
 sys.path.append('src/baxter_ras_interface/scripts')
 import baxter_ras_interface_speak
 import analog_io_rampup
-x=0
-y=0
-z=0
+x=-1
+y=-1
+z=-1
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.linear.x)
     rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.linear.y)
@@ -21,8 +21,8 @@ def callback(data):
     z=data.linear.z
 def listenVoice(data):
     global x,y,z
-    rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data)
-    baxter_ras_interface_speak.callback(x,y,z,data)
+    rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.data)
+    baxter_ras_interface_speak.callback(x,y,z,data.data)
 def main():
     global pub,pub2
     rospy.init_node('Emociones_imagenes_baxter')

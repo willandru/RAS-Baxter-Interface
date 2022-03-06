@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-  <node pkg="baxter_ras_interface" type="Emociones_imagenes_baxter.py"  name="Emociones_imagenes_baxter"/>
+  <!--node pkg="baxter_ras_interface" type="Emociones_baxter.py"  name="Emociones_imagenes_baxter"/-->
   <node pkg="baxter_ras_interface" type="Emociones_Ventiladores_Baxter.py"  name="Emociones_Ventiladores_Baxter"/>
   <node pkg="baxter_ras_interface" type="Emociones_Leds_Baxter.py"  name="Emociones_Leds_Baxter"/>
   <node pkg="baxter_ras_interface" type="Escuchar_HRS.py"  name="Escuchar_HRS"/>

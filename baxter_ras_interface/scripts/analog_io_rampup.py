@@ -31,7 +31,7 @@ import argparse
 
 import rospy
 
-import baxter_ras_interface.analog_io as AIO
+import baxter_interface.analog_io as AIO
 from geometry_msgs.msg import Twist
 
 def callback(x_1,y_1):
